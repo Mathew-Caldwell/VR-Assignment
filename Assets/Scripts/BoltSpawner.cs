@@ -18,7 +18,7 @@ public class BoltSpawner : MonoBehaviour
     {
         if (Time.time > endTime)
         {
-            Instantiate(bolt, new Vector3(transform.position.x, transform.position.y + Random.Range(-1f, 1f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.identity);
+            Instantiate(bolt, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
             endTime = Time.time + waitTime;
 
             
