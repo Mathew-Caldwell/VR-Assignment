@@ -141,4 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d32e0bb08eef04cbf81279500d8cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltMovement
-  move: 0.25
+  move: 0.4
