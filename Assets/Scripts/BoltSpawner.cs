@@ -18,8 +18,10 @@ public class BoltSpawner : MonoBehaviour
     {
         if (Time.time > endTime)
         {
-            Instantiate(bolt, transform.position, Quaternion.identity);
+            Instantiate(bolt, new Vector3(transform.position.x, transform.position.y + Random.Range(-1f, 1f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.identity);
             endTime = Time.time + waitTime;
+
+            
         }
     }
 }

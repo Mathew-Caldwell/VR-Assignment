@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltSpawner
   bolt: {fileID: 7338731458971608715, guid: 51bc67110a36c7f4b80cb7e88917d85a, type: 3}
-  waitTime: 5
+  waitTime: 1
 --- !u!4 &153405224
 Transform:
   m_ObjectHideFlags: 0
