@@ -771,6 +771,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 133775304}
     m_Modifications:
+    - target: {fileID: -1295208483892253689, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: -1295208483892253689, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2304306359077710791, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -785,15 +793,15 @@ PrefabInstance:
       objectReference: {fileID: 1335086483}
     - target: {fileID: 2390480098146088682, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 2347
+      value: 2431
       objectReference: {fileID: 0}
     - target: {fileID: 2597794278819533033, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.019
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 2597794278819533033, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.012
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: 2597794278819533033, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -837,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 411428637}
     - target: {fileID: 5303016608678290386, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 2858
+      value: 2876
       objectReference: {fileID: 0}
     - target: {fileID: 5842059030745700136, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_Mesh
@@ -849,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 1307169360}
     - target: {fileID: 6964010432616800693, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 1444
+      value: 1528
       objectReference: {fileID: 0}
     - target: {fileID: 7750115609529920377, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_Mesh
@@ -1556,6 +1564,10 @@ PrefabInstance:
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059786329452581396, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

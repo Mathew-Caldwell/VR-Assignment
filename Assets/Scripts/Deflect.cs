@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class Deflect : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    int numDeflected = 0;
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Bolt")){
+            numDeflected++;
+            Debug.Log($"Number deflected: {numDeflected}");
+            Destroy(collision.gameObject);
+        }
     }
 }
