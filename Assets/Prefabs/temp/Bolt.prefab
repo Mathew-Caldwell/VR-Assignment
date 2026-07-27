@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1322776822283023885}
   - component: {fileID: 1993015483203304527}
   - component: {fileID: -7365878538279759751}
+  - component: {fileID: -2604377202535323662}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -127,4 +128,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0a7bdb3b6ed264ba8d5d7ba846c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltDespawn
-  destroyTime: 0.03333333
+  destroyTime: 5
+--- !u!114 &-2604377202535323662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338731458971608715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d32e0bb08eef04cbf81279500d8cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoltMovement
+  move: 0.01
