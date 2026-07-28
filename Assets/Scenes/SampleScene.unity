@@ -444,7 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af10a137392280b4ea7f7aea179e5806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltSpawner
-  bolt: {fileID: 4536409320252993507, guid: 51bc67110a36c7f4b80cb7e88917d85a, type: 3}
+  boltPrefab: {fileID: 4536409320252993507, guid: 51bc67110a36c7f4b80cb7e88917d85a, type: 3}
+  heavyBoltPrefab: {fileID: 4536409320252993507, guid: 3bf1bfe743ad4034a80b6f9c945a3662, type: 3}
   waitTime: 1
   incrementSpawnSpeed: 0.01
   timeTillNextIncrement: 5
@@ -973,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 941449372}
     - target: {fileID: 2390480098146088682, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 2503
+      value: 2557
       objectReference: {fileID: 0}
     - target: {fileID: 2597794278819533033, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1037,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 1918694906}
     - target: {fileID: 6964010432616800693, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 1600
+      value: 1654
       objectReference: {fileID: 0}
     - target: {fileID: 6988814607538736532, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: deflectSound
