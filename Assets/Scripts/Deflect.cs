@@ -11,9 +11,9 @@ public class Deflect : MonoBehaviour
     }
 private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bolt")){
-        AudioSource.PlayClipAtPoint(deflectSound, transform.position);
-        Destroy(collision.gameObject);            
+        if (collision.gameObject.CompareTag("Bolt"))
+        {
+            AudioSource.PlayClipAtPoint(deflectSound, transform.position);
         }
     }
 }

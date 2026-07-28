@@ -15,4 +15,12 @@ public class BoltMovement : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x - move, transform.position.y, transform.position.z);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LaserSword"))
+        {
+            move *= -1;
+        }
+    }
 }

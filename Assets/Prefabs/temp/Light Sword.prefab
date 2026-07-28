@@ -127757,7 +127757,7 @@ GameObject:
   - component: {fileID: 6988814607538736532}
   m_Layer: 0
   m_Name: Light Sword
-  m_TagString: Untagged
+  m_TagString: LaserSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127841,6 +127841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a5cb3fa5c182d43bd0d1a20b253408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deflect
+  bolt: {fileID: 0}
   deflectSound: {fileID: 0}
 --- !u!1 &8422643184862454497
 GameObject:
