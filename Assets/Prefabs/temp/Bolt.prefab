@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoltMovement
   move: 0.1
   incrementMovmentSpeed: 0.01
+  timeTillNextIncreace: 5
 --- !u!136 &3450979023975330636
 CapsuleCollider:
   m_ObjectHideFlags: 0
