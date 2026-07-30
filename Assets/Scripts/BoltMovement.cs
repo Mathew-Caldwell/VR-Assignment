@@ -21,6 +21,7 @@ public class BoltMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("LaserSword"))
         {
             move *= -1;
+            Destroy(GetComponent<Collider>());
         }
     }
 }
