@@ -3,6 +3,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health = 100;
+
+    [Header("GUI")]
+    public HealthDisplay healthDisplay;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +26,7 @@ public class Health : MonoBehaviour
             int damage = collision.gameObject.GetComponent<BoltStats>().damage;
             health -= damage;
 
-            Debug.Log($"Player got hit by {collision.gameObject.name} and health is now at {health}");
+            healthDisplay.UpdateDisplay(health);
         }
     }
 }
