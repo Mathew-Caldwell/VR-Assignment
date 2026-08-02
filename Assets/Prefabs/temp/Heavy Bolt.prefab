@@ -123,8 +123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5470301203702369049}
-  - component: {fileID: 2845503100171796101}
+  - component: {fileID: 6228054072406141537}
   - component: {fileID: 5601994198079997991}
+  - component: {fileID: 2845503100171796101}
   - component: {fileID: 3450979023975330636}
   m_Layer: 0
   m_Name: Heavy Bolt
@@ -150,7 +151,7 @@ Transform:
   - {fileID: 7841996464890671331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2845503100171796101
+--- !u!114 &6228054072406141537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,10 +160,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4536409320252993507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0a7bdb3b6ed264ba8d5d7ba846c02c, type: 3}
+  m_Script: {fileID: 11500000, guid: 750435d578ee39245a97fad6f8aefece, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoltDespawn
-  destroyTime: 5
+  m_EditorClassIdentifier: Assembly-CSharp::BoltDamage
+  damage: 20
 --- !u!114 &5601994198079997991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltMovement
   move: 0.1
+--- !u!114 &2845503100171796101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536409320252993507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0a7bdb3b6ed264ba8d5d7ba846c02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoltDespawn
+  destroyTime: 5
 --- !u!136 &3450979023975330636
 CapsuleCollider:
   m_ObjectHideFlags: 0

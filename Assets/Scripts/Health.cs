@@ -12,27 +12,17 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
-        {
-            Debug.Log("Game Over");
-            Destroy(gameObject);
-        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bolt"))
         {
-            if (collision.gameObject.name == "Heavy Bolt(Clone)")
-            {
-                health -= 20;
-                Debug.Log($"Hit by {collision.gameObject.name}, health is now {health}");
-            }
-            else
-            {
-                health -= 10;
-                Debug.Log($"Hit by {collision.gameObject.name}, health is now {health}");
-            }
+            int damage = collision.gameObject.GetComponent<BoltDamage>().damage;
+            health -= damage;
+
+            Debug.Log($"Player got hit by {collision.gameObject.name} and health is now at {health}");
         }
     }
 }

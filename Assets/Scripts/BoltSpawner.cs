@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class BoltSpawner : MonoBehaviour
 {
-    [Header("Bolt Data")]
+    [Header("Bolt Prefabs")]
     public GameObject boltPrefab;
     public GameObject heavyBoltPrefab;
+
+    [Header("Spawn Settings")]
     public float waitTime = 1f;
     public float incrementSpawnSpeed = 0.1f;
     public float timeTillNextIncrement = 5f;
     float nextTime = 0f;
     float endTime = 0f;
-    
+
+    [Header("Player Control")]
+    public GameObject player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,26 +26,38 @@ public class BoltSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > endTime)
+        if (CanShoot())
         {
-            if(Time.time > nextTime)
+            if (Time.time > endTime)
             {
-                waitTime -= incrementSpawnSpeed;
-                nextTime = Time.time + timeTillNextIncrement;
-            }
+                if (Time.time > nextTime)
+                {
+                    waitTime -= incrementSpawnSpeed;
+                    nextTime = Time.time + timeTillNextIncrement;
+                }
 
-            int boltType = Random.Range(0, 10);
-            if (boltType == 9)
-            {
-                Instantiate(heavyBoltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
-            }
-            else
-            {
-                Instantiate(boltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
-            }
-            endTime = Time.time + waitTime;
+                int boltType = Random.Range(0, 10);
+                if (boltType == 9)
+                {
+                    Instantiate(heavyBoltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
+                }
+                else
+                {
+                    Instantiate(boltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
+                }
+                endTime = Time.time + waitTime;
 
-            
+
+            }
         }
+    }
+
+    bool CanShoot()
+    {
+        if(player.GetComponent<Health>().health <= 0)
+        {
+            return false;
+        }
+        return true;
     }
 }
