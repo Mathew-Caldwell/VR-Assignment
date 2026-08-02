@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 807548354}
   - component: {fileID: 807548353}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,12 +792,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807548351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1254142183}
+  m_Father: {fileID: 1813653852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1112,7 +1112,7 @@ PrefabInstance:
       objectReference: {fileID: 941449372}
     - target: {fileID: 2390480098146088682, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 2824
+      value: 2827
       objectReference: {fileID: 0}
     - target: {fileID: 2597794278819533033, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1180,12 +1180,16 @@ PrefabInstance:
       objectReference: {fileID: 1918694906}
     - target: {fileID: 6964010432616800693, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_VersionIndex
-      value: 1921
+      value: 1924
       objectReference: {fileID: 0}
     - target: {fileID: 6988814607538736532, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: deflectSound
       value: 
       objectReference: {fileID: 8300000, guid: b02661b1983843f4a8e25854215c13f1, type: 3}
+    - target: {fileID: 6988814607538736532, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 1813653851}
     - target: {fileID: 7750115609529920377, guid: 640d17271cec6e74e8865b0a78b5eed4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1882,6 +1886,56 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7917674758326848207, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 1373153106}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813653850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813653852}
+  - component: {fileID: 1813653851}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1813653851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813653850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d107e5835ea134a459022f56b802a08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreDisplay
+  scoreText: {fileID: 807548353}
+--- !u!224 &1813653852
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813653850}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 807548352}
+  m_Father: {fileID: 1254142183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1825945902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17889,7 +17943,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6224491807238848537, guid: f5c41ccb33b22ca408ee8d9b9f40b9d5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 807548352}
+      addedObject: {fileID: 1813653852}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5c41ccb33b22ca408ee8d9b9f40b9d5, type: 3}
 --- !u!1660057539 &9223372036854775807
