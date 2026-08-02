@@ -9,6 +9,8 @@ public class Deflect : MonoBehaviour
     [Header("Effects")]
     public GameObject hitEffectPrefab;
 
+    int score = 0;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,6 +21,7 @@ private void OnCollisionEnter(Collision collision)
         {
             AudioSource.PlayClipAtPoint(deflectSound, transform.position);
             Instantiate(hitEffectPrefab, collision.contacts[0].point, Quaternion.identity);
+            score += collision.gameObject.GetComponent<BoltStats>().scoreValue;
         }
     }
 }

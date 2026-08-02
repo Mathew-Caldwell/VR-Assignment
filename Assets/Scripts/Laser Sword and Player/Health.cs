@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bolt"))
         {
-            int damage = collision.gameObject.GetComponent<BoltDamage>().damage;
+            int damage = collision.gameObject.GetComponent<BoltStats>().damage;
             health -= damage;
 
             Debug.Log($"Player got hit by {collision.gameObject.name} and health is now at {health}");
