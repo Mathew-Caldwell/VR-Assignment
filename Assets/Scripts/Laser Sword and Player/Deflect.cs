@@ -6,8 +6,9 @@ public class Deflect : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip deflectSound;
 
-    [Header("Effects")]
+    [Header("Game Objects")]
     public GameObject hitEffectPrefab;
+    public GameObject player;
 
     [Header("GUI")]
     public ScoreDisplay scoreDisplay;
@@ -27,6 +28,12 @@ private void OnCollisionEnter(Collision collision)
             Instantiate(hitEffectPrefab, collision.contacts[0].point, Quaternion.identity);
             score += collision.gameObject.GetComponent<BoltStats>().scoreValue;
             scoreDisplay.UpdateScore(score);
+
+            if(collision.gameObject.name == "Health Bolt(Clone)")
+            {
+                player.GetComponent<Health>().UpdateHealth(-collision.gameObject.GetComponent<BoltStats>().healValue);
+                Debug.Log("a");
+            }
         }
     }
 }

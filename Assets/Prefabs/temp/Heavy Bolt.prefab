@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoltDamage
   damage: 20
   scoreValue: 20
+  healValue: 0
 --- !u!114 &5601994198079997991
 MonoBehaviour:
   m_ObjectHideFlags: 0

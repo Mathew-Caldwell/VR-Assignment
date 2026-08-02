@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2845503100171796101}
   - component: {fileID: 3450979023975330636}
   m_Layer: 0
-  m_Name: Bolt
+  m_Name: Health Bolt
   m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750435d578ee39245a97fad6f8aefece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoltDamage
-  damage: 10
-  scoreValue: 10
-  healValue: 0
+  damage: 0
+  scoreValue: -20
+  healValue: 5
 --- !u!114 &5601994198079997991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3dc49fddc9d6ede40b82da88d7477edc, type: 2}
+  - {fileID: 2100000, guid: eb1364f1bf63fb84b8c23963880ef5e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

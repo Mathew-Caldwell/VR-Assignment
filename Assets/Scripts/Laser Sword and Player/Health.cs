@@ -3,6 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health = 100;
+    public bool isDead = false;
 
     [Header("GUI")]
     public HealthDisplay healthDisplay;
@@ -10,7 +11,7 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -24,9 +25,24 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Bolt"))
         {
             int damage = collision.gameObject.GetComponent<BoltStats>().damage;
-            health -= damage;
-
-            healthDisplay.UpdateDisplay(health);
+            UpdateHealth(damage);
         }
+
+        if(health <= 0)
+        {
+            isDead = true;
+        }
+    }
+
+    public void UpdateHealth(int damage)
+    {
+        health -= damage;
+
+        if (health >= 100)
+        {
+            health = 100;
+        }
+
+        healthDisplay.UpdateDisplay(health);
     }
 }

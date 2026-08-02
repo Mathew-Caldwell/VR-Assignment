@@ -5,6 +5,7 @@ public class BoltSpawner : MonoBehaviour
     [Header("Bolt Prefabs")]
     public GameObject boltPrefab;
     public GameObject heavyBoltPrefab;
+    public GameObject healthBoltPrefab;
 
     [Header("Spawn Settings")]
     public float waitTime = 1f;
@@ -36,10 +37,14 @@ public class BoltSpawner : MonoBehaviour
                     nextTime = Time.time + timeTillNextIncrement;
                 }
 
-                int boltType = Random.Range(0, 10);
-                if (boltType == 9)
+                int boltType = Random.Range(0, 20);
+                if (boltType == 19 || boltType == 18)
                 {
                     Instantiate(heavyBoltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
+                }
+                else if(boltType == 17)
+                {
+                    Instantiate(healthBoltPrefab, new Vector3(transform.position.x, transform.position.y + Random.Range(-0.5f, 0.5f), transform.position.z + Random.Range(-1f, 1f)), Quaternion.Euler(0f, 0f, 90f));
                 }
                 else
                 {
@@ -54,7 +59,7 @@ public class BoltSpawner : MonoBehaviour
 
     bool CanShoot()
     {
-        if(player.GetComponent<Health>().health <= 0)
+        if(player.GetComponent<Health>().isDead)
         {
             return false;
         }
