@@ -32,7 +32,6 @@ private void OnCollisionEnter(Collision collision)
             if(collision.gameObject.name == "Health Bolt(Clone)")
             {
                 player.GetComponent<Health>().UpdateHealth(-collision.gameObject.GetComponent<BoltStats>().healValue);
-                Debug.Log("a");
             }
         }
     }
