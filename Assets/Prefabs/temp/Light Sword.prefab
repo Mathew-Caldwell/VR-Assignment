@@ -127657,7 +127657,7 @@ Transform:
   m_GameObject: {fileID: 7626723026155521321}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.239, z: -0.000000028711}
+  m_LocalPosition: {x: 0, y: -1.245, z: -0.000000028711}
   m_LocalScale: {x: 0.6146389, y: 0.023453, z: 0.6146389}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127816,6 +127816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Deflect
   deflectSound: {fileID: 8300000, guid: b02661b1983843f4a8e25854215c13f1, type: 3}
   hitEffectPrefab: {fileID: 2830651393507808234, guid: 5c4788b830bfb7c45b086ecf2e6aa53f, type: 3}
+  player: {fileID: 0}
+  scoreDisplay: {fileID: 0}
 --- !u!54 &-6824363896985409124
 Rigidbody:
   m_ObjectHideFlags: 0
