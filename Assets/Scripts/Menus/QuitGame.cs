@@ -3,26 +3,9 @@ using UnityEngine.UI;
 
 public class QuitGame : MonoBehaviour
 {
-    [SerializeField] private Button quitGameBttn;
-
-    private void Awake()
-    {
-        if (quitGameBttn != null)
-        {
-            quitGameBttn.onClick.AddListener(ButtonClicked);
-        }
-    }
-
-    void ButtonClicked()
+    public void ExitGame()
     {
         Application.Quit();
-    }
-
-    private void OnDestroy()
-    {
-        if(quitGameBttn != null)
-        {
-            quitGameBttn.onClick.RemoveListener(ButtonClicked);
-        }
+        Debug.Log("game quit");
     }
 }
