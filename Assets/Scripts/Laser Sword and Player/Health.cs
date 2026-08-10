@@ -5,6 +5,8 @@ public class Health : MonoBehaviour
     public int health = 100;
     public bool isDead = false;
 
+    [SerializeField] SceneLoader sceneLoader;
+
     [Header("GUI")]
     public HealthDisplay healthDisplay;
 
@@ -17,7 +19,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isDead)
+        {
+            sceneLoader.LoadScene("EndScene");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
