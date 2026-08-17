@@ -2474,6 +2474,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8a76add18dfda4a8a4d7710d3b04c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!114 &1436050341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436050339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c3576add446cb4eb04648d4cbeb98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+  pauseMenuUI: {fileID: 419293835}
+  pauseButton: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  isVisible: 0
 --- !u!1 &1488161609
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4129,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3078485405732132497, guid: b416f535d23d7b745bd2fa44de7b7a4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1436050340}
+    - targetCorrespondingSourceObject: {fileID: 3078485405732132497, guid: b416f535d23d7b745bd2fa44de7b7a4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1436050341}
   m_SourcePrefab: {fileID: 100100000, guid: b416f535d23d7b745bd2fa44de7b7a4c, type: 3}
 --- !u!1001 &2256011977130896677
 PrefabInstance:
