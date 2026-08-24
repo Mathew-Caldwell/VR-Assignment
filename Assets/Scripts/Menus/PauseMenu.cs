@@ -16,16 +16,12 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OnEnable();
     }
 
     private void OnEnable()
     {
-        if(pauseButton != null)
-        {
-            pauseButton.action.Enable();
-            pauseButton.action.performed += Pressed;
-        }
+        pauseButton.action.started += Pressed;
     }
 
     private void Pressed(InputAction.CallbackContext context)
