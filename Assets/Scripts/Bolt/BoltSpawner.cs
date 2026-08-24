@@ -13,6 +13,7 @@ public class BoltSpawner : MonoBehaviour
     public float timeTillNextIncrement = 5f;
     float nextTime = 0f;
     float endTime = 0f;
+    public float move = 0.1f;
 
     [Header("Player Control")]
     public GameObject player;

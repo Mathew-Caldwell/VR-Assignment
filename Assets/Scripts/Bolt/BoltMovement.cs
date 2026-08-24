@@ -3,13 +3,16 @@ using UnityEngine;
 public class BoltMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float move = 0.1f;
     GameObject player;
+    GameObject spawner;
     bool isDeflected = false;
+    float move;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        spawner = GameObject.FindWithTag("Spawner");
+        move = spawner.GetComponent<BoltSpawner>().move;
     }
 
     // Update is called once per frame
@@ -21,11 +24,11 @@ public class BoltMovement : MonoBehaviour
         }
         else if (isDeflected)
         {
-            move = -0.1f;
+            move = spawner.GetComponent<BoltSpawner>().move * -1;
         }
         else
         {
-            move = 0.1f;
+            move = spawner.GetComponent<BoltSpawner>().move;
         }
         transform.position = new Vector3(transform.position.x - move, transform.position.y, transform.position.z);
     }

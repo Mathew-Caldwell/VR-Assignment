@@ -8,6 +8,7 @@ TagManager:
   - Bolt
   - LaserSword
   - Menu
+  - Spawner
   layers:
   - Default
   - TransparentFX
