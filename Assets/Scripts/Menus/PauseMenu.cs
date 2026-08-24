@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pauseMenuUI.SetActive(isVisible);
+        pauseMenuUI.GetComponent<BoxCollider>().enabled = isVisible;
     }
 
     // Update is called once per frame
@@ -21,12 +22,16 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        pauseButton.action.started += Pressed;
+        if (pauseButton != null)
+        {
+            pauseButton.action.started += Pressed;
+        }
     }
 
     private void Pressed(InputAction.CallbackContext context)
     {
         isVisible = !isVisible;
+        pauseMenuUI.GetComponent<BoxCollider>().enabled = isVisible;
         pauseMenuUI.SetActive(isVisible);
     }
 }

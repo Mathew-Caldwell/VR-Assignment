@@ -59,7 +59,7 @@ public class BoltSpawner : MonoBehaviour
 
     bool CanShoot()
     {
-        if(player.GetComponent<Health>().isDead)
+        if(player.GetComponent<Health>().isDead || player.GetComponent<PauseMenu>().isVisible)
         {
             return false;
         }
