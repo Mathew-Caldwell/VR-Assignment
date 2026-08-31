@@ -7,7 +7,7 @@ public class BoltMovement : MonoBehaviour
     GameObject spawner;
     bool isDeflected = false;
 
-    // 10 is easy, 20 medium,
+    // 1 is easy, 2 medium, 3 hard
     float speed;
 
     Rigidbody rb;
@@ -35,6 +35,7 @@ public class BoltMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("LaserSword"))
         {
             Destroy(GetComponent<Collider>());
+            isDeflected = true;
             
             //stops the bolt from moving in any direction other than the x axis
             rb.constraints = RigidbodyConstraints.FreezePositionY;

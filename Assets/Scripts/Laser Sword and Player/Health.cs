@@ -31,7 +31,6 @@ public class Health : MonoBehaviour
         {
             int damage = collision.gameObject.GetComponent<BoltStats>().damage;
             UpdateHealth(damage);
-            Debug.Log($"{damage} {collision.gameObject.name}");
         }
 
         if(health <= 0)
