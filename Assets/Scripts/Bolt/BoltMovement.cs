@@ -6,13 +6,16 @@ public class BoltMovement : MonoBehaviour
     GameObject player;
     GameObject spawner;
     bool isDeflected = false;
-    float move;
+
+    // 10 is easy, 20 medium,
+    float speed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         spawner = GameObject.FindWithTag("Spawner");
-        move = spawner.GetComponent<BoltSpawner>().move;
+        speed = spawner.GetComponent<BoltSpawner>().move;
     }
 
     // Update is called once per frame
@@ -20,17 +23,20 @@ public class BoltMovement : MonoBehaviour
     {
         if (player.GetComponent<PauseMenu>().isVisible)
         {
-            move = 0;
+            speed = 0;
         }
         else if (isDeflected)
         {
-            move = spawner.GetComponent<BoltSpawner>().move * -1;
+            speed = spawner.GetComponent<BoltSpawner>().move * -1;
         }
         else
         {
-            move = spawner.GetComponent<BoltSpawner>().move;
+            speed = spawner.GetComponent<BoltSpawner>().move;
         }
-        transform.position = new Vector3(transform.position.x - move, transform.position.y, transform.position.z);
+
+        Vector3 direction = new Vector3(0, 1, 0);
+
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
