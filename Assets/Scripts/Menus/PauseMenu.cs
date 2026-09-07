@@ -34,4 +34,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.GetComponent<BoxCollider>().enabled = isVisible;
         pauseMenuUI.SetActive(isVisible);
     }
+
+    public void Resume()
+    {
+        isVisible = !isVisible;
+    }
 }

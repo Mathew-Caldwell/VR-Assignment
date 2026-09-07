@@ -14,7 +14,7 @@ public class BoltSpawner : MonoBehaviour
     public float timeTillNextIncrement = 5f;
     float nextTime = 0f;
     float endTime = 0f;
-    [SerializeField] float move;
+    public int move;
 
     [Header("Player Control")]
     public GameObject player;

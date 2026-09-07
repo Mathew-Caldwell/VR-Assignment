@@ -16,6 +16,7 @@ public class ScoreDisplay : MonoBehaviour
     public void UpdateScore(int score)
     {
         this.score = $"{score} X";
+        ScoreData.score = score;
         UpdateDisplay();    
         Debug.Log(score);
     }

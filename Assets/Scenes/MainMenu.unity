@@ -249,8 +249,7 @@ GameObject:
   - component: {fileID: 316812726}
   - component: {fileID: 316812725}
   - component: {fileID: 316812724}
-  - component: {fileID: 316812723}
-  - component: {fileID: 316812722}
+  - component: {fileID: 316812727}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -278,30 +277,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -38.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &316812722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316812720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0065620b31fabb24e8bfda87427fb97e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuSwapper
---- !u!114 &316812723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316812720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a183271cb571a845b9b86af50007035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuitGame
 --- !u!114 &316812724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,10 +321,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 316812722}
-        m_TargetAssemblyTypeName: MenuSwapper, Assembly-CSharp
-        m_MethodName: SwapMenu
-        m_Mode: 5
+      - m_Target: {fileID: 316812727}
+        m_TargetAssemblyTypeName: SwapMenu, Assembly-CSharp
+        m_MethodName: ToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -396,6 +371,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316812720}
   m_CullTransparentMesh: 1
+--- !u!114 &316812727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316812720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa7692723d62c241bd51b90d40e4656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwapMenu
+  mainMenu: {fileID: 643481761}
+  settings: {fileID: 1076294784}
 --- !u!114 &319169492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +557,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643481761}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab68ce6587aab0146b8dabefbd806791, type: 3}
   m_Name: 
@@ -590,7 +579,7 @@ MonoBehaviour:
   m_EnableGamepadInput: 1
   m_EnableJoystickInput: 1
   m_PointAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_LeftClickAction: {fileID: 1855836014308820768, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
@@ -609,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643481761}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -1060,6 +1049,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Meduim
       objectReference: {fileID: 0}
+    - target: {fileID: 8453703399181356548, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 441087507}
     - target: {fileID: 8934129338311510220, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_text
       value: Hard
@@ -1106,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8942838965492718970, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.25
+      value: 19.18
       objectReference: {fileID: 0}
     - target: {fileID: 8942838965492718970, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1158,13 +1151,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9114371157175854456, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1076294793}
+      addedObject: {fileID: 1076294791}
     - targetCorrespondingSourceObject: {fileID: 9114371157175854456, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076294792}
-    - targetCorrespondingSourceObject: {fileID: 9114371157175854456, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1076294791}
     - targetCorrespondingSourceObject: {fileID: 9114371157175854456, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076294790}
@@ -1222,10 +1212,10 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 46.9, y: 61.84, z: 1}
+  m_Size: {x: 55.3, y: 74.3, z: 1}
   m_Center: {x: 0, y: -17.61, z: 0}
 --- !u!114 &1076294790
 MonoBehaviour:
@@ -1234,7 +1224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076294784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab68ce6587aab0146b8dabefbd806791, type: 3}
   m_Name: 
@@ -1256,7 +1246,7 @@ MonoBehaviour:
   m_EnableGamepadInput: 1
   m_EnableJoystickInput: 1
   m_PointAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_LeftClickAction: {fileID: 1855836014308820768, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
@@ -1294,7 +1284,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076294784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -1302,19 +1292,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &1076294793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076294784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ccda1e0e21aac24ca6ad7040cbc7f54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Hide
-  visible: 0
 --- !u!1 &1167195619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,8 +2090,8 @@ MonoBehaviour:
   m_AutoDeselect: 0
   m_TimeToAutoDeselect: 3
   m_EnableUIInteraction: 1
-  m_BlockInteractionsWithScreenSpaceUI: 0
-  m_BlockUIOnInteractableSelection: 1
+  m_BlockInteractionsWithScreenSpaceUI: 1
+  m_BlockUIOnInteractableSelection: 0
   m_ManipulateAttachTransform: 1
   m_UseForceGrab: 0
   m_RotateSpeed: 180
@@ -2152,7 +2129,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_InputActionReferencePerformed: {fileID: 3279264004350380116, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    m_InputActionReferenceValue: {fileID: 0}
+    m_InputActionReferenceValue: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualPerformed: 0
     m_ManualValue: 0
@@ -3449,27 +3426,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2705533446247470906}
+      objectReference: {fileID: 2705533446247470907}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwapMenu
+      value: ToSettings
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuSwapper, Assembly-CSharp
+      value: SwapMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DifficultyMenu
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2052705004997856694, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3600,7 +3577,7 @@ PrefabInstance:
       addedObject: {fileID: 2705533446247470904}
     - targetCorrespondingSourceObject: {fileID: 5368044186487083369, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2705533446247470906}
+      addedObject: {fileID: 2705533446247470907}
   m_SourcePrefab: {fileID: 100100000, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
 --- !u!1 &2705533446247470903 stripped
 GameObject:
@@ -3624,7 +3601,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5368044186487083369, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
   m_PrefabInstance: {fileID: 2705533446247470902}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2705533446247470906
+--- !u!114 &2705533446247470907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3633,9 +3610,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2705533446247470905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0065620b31fabb24e8bfda87427fb97e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fa7692723d62c241bd51b90d40e4656, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuSwapper
+  m_EditorClassIdentifier: Assembly-CSharp::SwapMenu
+  mainMenu: {fileID: 643481761}
+  settings: {fileID: 1076294784}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

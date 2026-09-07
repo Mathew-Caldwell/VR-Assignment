@@ -8,9 +8,11 @@ public class BoltMovement : MonoBehaviour
     bool isDeflected = false;
 
     // 1 is easy, 2 medium, 3 hard
-    float speed;
+    int speed;
 
     Rigidbody rb;
+
+    int speedMultiplier = -20;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,13 +23,32 @@ public class BoltMovement : MonoBehaviour
         speed = spawner.GetComponent<BoltSpawner>().move;
 
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(spawner.GetComponent<BoltSpawner>().transform.forward * speed * 4000);
+        rb.linearVelocity = new Vector3(speed * speedMultiplier, 0 , 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (player.GetComponent<PauseMenu>().isVisible)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionX;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+            if (isDeflected)
+            {
+                rb.constraints = RigidbodyConstraints.FreezePositionY;
+                rb.constraints = RigidbodyConstraints.FreezePositionZ;
+                rb.linearVelocity = new Vector3(speed * speedMultiplier * -1, 0, 0);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector3(speed * speedMultiplier, 0, 0);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,7 +70,7 @@ public class BoltMovement : MonoBehaviour
 
             //invertes the velocity of the bolt
             rb.linearVelocity = Vector3.zero;
-            rb.AddForce(spawner.GetComponent<BoltSpawner>().transform.forward * speed * 2000 * -1);            
+            rb.linearVelocity = new Vector3(speed * speedMultiplier * -1, 0, 0);
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
