@@ -14,7 +14,7 @@ public class BoltSpawner : MonoBehaviour
     public float timeTillNextIncrement = 5f;
     float nextTime = 0f;
     float endTime = 0f;
-    public float move = 0.1f;
+    [SerializeField] float move;
 
     [Header("Player Control")]
     public GameObject player;
@@ -24,6 +24,8 @@ public class BoltSpawner : MonoBehaviour
     {
         endTime = Time.time + waitTime;
         nextTime = Time.time + timeTillNextIncrement;
+
+        move = DifficultySetter.difficulty;
     }
 
     // Update is called once per frame
