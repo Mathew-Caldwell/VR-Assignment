@@ -20,7 +20,8 @@ public class Difficulty : MonoBehaviour
         switch (difficulty)
         {
             case "Hard":
-                DifficultySetter.difficulty = 3;                
+                DifficultySetter.difficulty = 3;
+                DifficultySetter.maxHealth = 100;
 
                 hard.fontMaterial.SetColor("_OutlineColor", new Color32(128,128,128,255));
                 medium.fontMaterial.SetColor("_OutlineColor", baseColor);
@@ -28,6 +29,7 @@ public class Difficulty : MonoBehaviour
                 break;
             case "Medium":
                 DifficultySetter.difficulty = 2;
+                DifficultySetter.maxHealth = 150;
 
                 hard.fontMaterial.SetColor("_OutlineColor", baseColor);
                 medium.fontMaterial.SetColor("_OutlineColor", new Color32(128, 128, 128, 255));
@@ -35,6 +37,7 @@ public class Difficulty : MonoBehaviour
                 break;
             case "Easy":
                 DifficultySetter.difficulty = 1;
+                DifficultySetter.maxHealth = 200;
 
                 hard.fontMaterial.SetColor("_OutlineColor", baseColor);
                 medium.fontMaterial.SetColor("_OutlineColor", baseColor);

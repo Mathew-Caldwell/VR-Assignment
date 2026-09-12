@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int health = 100;
+    [Header("Health")]
+    int health = 100;
     [SerializeField] int maxHealth = 100;
     public bool isDead = false;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
 
+    [Header("Scene")]
     [SerializeField] SceneLoader sceneLoader;
 
     [Header("GUI")]
