@@ -985,6 +985,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1445532648730533203, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
+      propertyPath: m_Name
+      value: MediumText
+      objectReference: {fileID: 0}
     - target: {fileID: 1607607643009375708, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1048,6 +1052,14 @@ PrefabInstance:
     - target: {fileID: 6797202472398666139, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_text
       value: Meduim
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339180888279393131, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
+      propertyPath: m_Name
+      value: EasyText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422473513379615867, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
+      propertyPath: m_Name
+      value: HardText
       objectReference: {fileID: 0}
     - target: {fileID: 8453703399181356548, guid: f9ef1d511b23ba848bc704e96eb4be41, type: 3}
       propertyPath: m_Camera

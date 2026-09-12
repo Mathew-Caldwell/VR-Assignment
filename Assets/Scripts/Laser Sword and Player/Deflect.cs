@@ -3,8 +3,7 @@ using UnityEngine;
 public class Deflect : MonoBehaviour
 {
     [Header("Audio")]
-    private AudioSource audioSource;
-    public AudioClip deflectSound;
+    [SerializeField] private AudioSource audioSource;
 
     [Header("Game Objects")]
     public GameObject hitEffectPrefab;
@@ -24,7 +23,8 @@ private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bolt"))
         {
-            AudioSource.PlayClipAtPoint(deflectSound, transform.position);
+            audioSource.pitch = Random.Range(0.9f, 1.2f);
+            audioSource.Play();
 
             Instantiate(hitEffectPrefab, collision.contacts[0].point, Quaternion.identity);
 

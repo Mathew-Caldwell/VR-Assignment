@@ -3,7 +3,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health = 100;
+    [SerializeField] int maxHealth = 100;
     public bool isDead = false;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] SceneLoader sceneLoader;
 
@@ -14,6 +18,8 @@ public class Health : MonoBehaviour
     void Start()
     {
         isDead = false;
+        audioSource = GetComponent<AudioSource>();
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -29,6 +35,9 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bolt"))
         {
+            audioSource.pitch = Random.Range(0.6f, 0.7f);
+            audioSource.Play();
+
             int damage = collision.gameObject.GetComponent<BoltStats>().damage;
             UpdateHealth(damage);
         }
@@ -43,9 +52,9 @@ public class Health : MonoBehaviour
     {
         health -= damage;
 
-        if (health >= 100)
+        if (health >= maxHealth)
         {
-            health = 100;
+            health = maxHealth;
         }
 
         healthDisplay.UpdateDisplay(health);
