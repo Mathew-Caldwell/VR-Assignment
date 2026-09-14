@@ -3,7 +3,9 @@ using UnityEngine;
 public class Deflect : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] float maxDeflectVolume = 1.0f;
+    float deflectVolume;
 
     [Header("Game Objects")]
     public GameObject hitEffectPrefab;
@@ -18,6 +20,7 @@ public class Deflect : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         scoreDisplay.UpdateScore(score);
+        deflectVolume = maxDeflectVolume * DifficultySetter.deflectVolume;
     }
 private void OnCollisionEnter(Collision collision)
     {

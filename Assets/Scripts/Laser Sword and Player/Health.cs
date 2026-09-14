@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] float maxHitVolume = 1f;
+    float hitVolume;
 
     [Header("Scene")]
     [SerializeField] SceneLoader sceneLoader;
@@ -16,12 +18,16 @@ public class Health : MonoBehaviour
     [Header("GUI")]
     public HealthDisplay healthDisplay;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isDead = false;
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
+        hitVolume = DifficultySetter.hitVolume * maxHitVolume;
+        audioSource.volume = hitVolume;
     }
 
     // Update is called once per frame

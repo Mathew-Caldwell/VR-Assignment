@@ -1,6 +1,7 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SliderSettings : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class SliderSettings : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(slider != null)
+        if (gameObject.name.Contains("Deflect"))
         {
-            slider.value = 0.5f;
+            slider.value = DifficultySetter.deflectVolume;
+        }
+        else if (gameObject.name.Contains("Hit"))
+        {
+            slider.value = DifficultySetter.hitVolume;
+        }
+        else if (gameObject.name.Contains("Brightness"))
+        {
+            slider.value = DifficultySetter.brightness;
         }
     }
 
-    // Update is called once per frame
+
     private void OnEnable()
     {
         slider.onValueChanged.AddListener(OnValueChange);
@@ -40,8 +49,6 @@ public class SliderSettings : MonoBehaviour
         {
             DifficultySetter.brightness = value;
         }
-
-        Debug.Log($"{gameObject.name} {value}");
     }
 
 
