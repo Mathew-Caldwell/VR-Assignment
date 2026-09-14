@@ -3444,6 +3444,10 @@ PrefabInstance:
       value: F3_Grey Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2194110437772777705, guid: f00c8df389af47046baea2d14b531550, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194110437772777705, guid: f00c8df389af47046baea2d14b531550, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9b31cbf955475844294f1b0830698460, type: 2}
