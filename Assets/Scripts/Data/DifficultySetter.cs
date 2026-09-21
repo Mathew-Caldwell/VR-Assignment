@@ -8,4 +8,6 @@ public static class DifficultySetter
     public static float deflectVolume = 0.5f;
     public static float hitVolume = 0.5f;
     public static float brightness = 1f;
+
+    public static string dominantHand = "R"; //default right hand, R = right L = left B = both hands
 }
