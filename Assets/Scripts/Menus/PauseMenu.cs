@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnEnable();
+        //OnEnable();
     }
 
     private void OnEnable()
@@ -38,5 +38,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         isVisible = !isVisible;
+        pauseMenuUI.GetComponent<BoxCollider>().enabled = isVisible;
+        pauseMenuUI.SetActive(isVisible);
     }
 }
